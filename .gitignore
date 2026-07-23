@@ -1,0 +1,8 @@
+.agents/
+.codex/
+.cache/
+.clangd/
+build/
+*.o
+*.out
+

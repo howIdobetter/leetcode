@@ -1,0 +1,20 @@
+{
+  "clangd.arguments": [
+    "--background-index",
+    "--completion-style=detailed",
+    "--function-arg-placeholders=1",
+    "--header-insertion=never",
+    "--pch-storage=memory"
+  ],
+  "editor.inlayHints.enabled": "onUnlessPressed",
+  "editor.semanticHighlighting.enabled": true,
+  "files.associations": {
+    "*.cpp": "cpp"
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+    "editor.formatOnPaste": true,
+    "editor.suggestSelection": "recentlyUsedByPrefix"
+  }
+}
+

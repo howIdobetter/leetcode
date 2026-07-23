@@ -1,0 +1,20 @@
+CompileFlags:
+  Compiler: clang++
+  Add:
+    - -std=c++20
+    - -include
+    - .leetcode/leetcode_prelude.hpp
+
+Index:
+  Background: Build
+  StandardLibrary: Yes
+
+Completion:
+  AllScopes: Yes
+  ArgumentLists: FullPlaceholders
+  HeaderInsertion: Never
+
+Diagnostics:
+  UnusedIncludes: None
+  MissingIncludes: None
+

@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "leetcode.vscode-leetcode",
+    "llvm-vs-code-extensions.vscode-clangd"
+  ],
+  "unwantedRecommendations": [
+    "ms-vscode.cpptools-extension-pack"
+  ]
+}
