@@ -16,7 +16,8 @@
  */
 class Solution {
 private:
-    unordered_map<TreeNode*, TreeNode*> fa;
+    unordered_map<TreeNode*, TreeNode*> parent;
+    unordered_map<TreeNode*, int> depth;
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
         

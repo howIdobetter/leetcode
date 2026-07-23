@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+repo_root="$(git rev-parse --show-toplevel)"
+cd "$repo_root"
+
+branch="$(git branch --show-current)"
+if [[ -z "$branch" ]]; then
+    echo "错误：当前不在 Git 分支上。" >&2
+    exit 1
+fi
+
+# 更新所有已跟踪文件，并收集新建的 C++ 题解；不上传其他临时文件。
+git add -u -- .
+git add -- ./*.cpp
+
+if ! git diff --cached --quiet; then
+    commit_message="${*:-更新 LeetCode 题解 $(date '+%Y-%m-%d %H:%M')}"
+    git commit -m "$commit_message"
+else
+    echo "没有新的题解修改，继续检查尚未推送的提交。"
+fi
+
+git pull --rebase origin "$branch"
+git push origin "$branch"
+
+echo "同步完成：https://github.com/howIdobetter/leetcode"
